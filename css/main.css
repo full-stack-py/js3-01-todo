@@ -5,6 +5,12 @@
 /* 3rd-party */
 
 /* components */
+@import './components/form.css';
 @import './components/todo.css';
 
 /* CUSTOM STYLE BELOW THIS COMMENT LINE */
+body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
