@@ -12,8 +12,8 @@ class Form {
         this.saveButtonDOM = null;
     }
 
-    init () {
-        if(this.isValidSelector() && this.findTargetElement()) {
+    init() {
+        if (this.isValidSelector() && this.findTargetElement()) {
             this.render();
             this.addEvents();
             return true;
@@ -26,9 +26,9 @@ class Form {
     }
 
     isValidSelector() {
-        if(typeof this.selector !== "string" || this.selector === "") {
+        if (typeof this.selector !== "string" || this.selector === "") {
             console.error("ERROR: selector turi buti ne tuscias string");
-            return false;            
+            return false;
         }
         return true;
 
@@ -37,7 +37,7 @@ class Form {
     findTargetElement() {
         this.DOM = document.querySelector(this.selector);
 
-        if(!this.DOM) {
+        if (!this.DOM) {
             console.error("Pagal pateikta selector, elementas neegzistuoja");
             return false;
         }
@@ -82,12 +82,12 @@ class Form {
             const date = this.dateDOM.value;
             const completed = this.completeDOM.checked;
 
-            if(this.isValidTask(message, color, date, completed)) {
+            if (this.isValidTask(message, color, date, completed)) {
                 console.log("task is valid...");
-            } 
+            }
             else {
                 console.log("task is NOT valid...");
-            }                
+            }
         });
     }
 
@@ -99,7 +99,7 @@ class Form {
     }
 
     isValidMessage(message) {
-        if(typeof message !== "string" || message === "") {
+        if (typeof message !== "string" || message === "") {
             return false;
         }
         return true;
@@ -111,9 +111,9 @@ class Form {
 
     isValidDate(date) {
         const d = new Date(date);
-        if(isNaN(d)) {
+        if (isNaN(d)) {
             return false;
-        }   
+        }
         return true;
     }
 
