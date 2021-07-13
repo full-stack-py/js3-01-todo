@@ -99,6 +99,9 @@ class Form {
     }
 
     isValidMessage(message) {
+        if(typeof message !== "string" || message === "") {
+            return false;
+        }
         return true;
     }
 
@@ -107,11 +110,15 @@ class Form {
     }
 
     isValidDate(date) {
+        const d = new Date(date);
+        if(isNaN(d)) {
+            return false;
+        }   
         return true;
     }
 
     isValidCompleted(completed) {
-        return true;
+        return typeof completed === "boolean";
     }
 
 }
